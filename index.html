@@ -1,0 +1,118 @@
+<html lang="en">
+<!-- I DO NOT ALLOW ANYONE TO DOWNLOAD/USE ANY IMAGE OR VIDEO FROM THIS WEBSITE APART FROM THE THREE SEARCH ICONS THAT ARE NOT MINE-->
+<head>
+  <title>Holio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://vjs.zencdn.net/7.14.3/video-js.css"/>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <link rel="shortcut icon" type="image/png" href="icon/favic.png">
+</head>
+
+<body class="container-fluid nopad">
+  <header class="sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-md-4 nopad player1" id="player1">
+              <img src="content/default.jpg" alt="" id="defaultimg">
+              <img src="icon/play.png" alt="" class="overlayimg Clickable" id="playimg">
+              <img src="icon/stop.png" alt="" class="overlayimg Clickable" id="stopimg" style="display:none">
+              <img src="icon/loading.png" alt="" class="overlayimg rotating" id="loadingimg" style="display:none">
+            </div>
+            <div class="col-md-6 nopad player2">
+              <p class="radioname">Holio</p>
+              <input id="slide" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="80" />
+              <audio src="/live/;stream.mp3" type="audio/mp3" id="stream" preload="none"></audio><br>
+              <div style="margin-top:2%">
+                <img src="icon/retry.png" id="reset" class="Clickable" style="width:25px" data-toggle="tooltip" title="Reset player"></img>
+                <img src="icon/spotify.png" id="spotify" class="Clickable" style="width:30px" data-toggle="tooltip" title="Search on Spotify"></img>
+                <img src="icon/yt.png" id="yt" class="Clickable" style="width:30px" data-toggle="tooltip" title="Search on Youtube"></img>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6" id="statusdiv">
+          <h4>Current:</h4>
+          <p id="cur"><i>Fetching data</i></p>
+          <h4>Next:</h4>
+          <p id="nex"><i>Fetching data</i></p>
+        </div>
+      </div>
+    </div>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link Clickable">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Clickable" href="#history">History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Clickable" href="#livestream">LivePodcast</a>
+      </li>
+    </ul>
+  </header>
+  <main class="container">
+    <div id="home" class="active">
+      <video controls class="video-js vjs-fluid vjs-big-play-centered" data-setup='{}' poster="content/placeholder.jpg" preload="auto">
+        <source src="content/placeholder.mp4" type="video/mp4">
+      </video>
+      <div class="mainpagecontent">
+        <b>Stream status:</b><div id="status"><i>Fetching data</i></div>
+        <hr>
+        <div class="newssection">
+          <div class="post">
+            <div class="postHead pinnedPost">
+              <a href="#pinned">About Us</a>
+              <p class="postDate">📌 Pinned post</p>
+            </div>
+            <div class="postPreview">
+              <p>I actually don't know what to write here, because I don't even believe this website would be used...</p>
+              <p>Like ngl, it would be epic and it would make me happy and excited if I actually had some team, that would make playlists for this radio and that it would actually operate like a real one.....</p>
+              <i>More in the post</i>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary morebutton">Load all</button>
+        </div>
+        <hr>
+        <p><b>Todo:</b> Better looking history, admin page for articles, <i>somehow finish this bottom</i>, move to IceCast probs</p>
+        <p>Otherwise I think the JS code is nice and working good.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus porttitor turpis ac leo. Fusce consectetuer risus a nunc. Nulla est. Curabitur bibendum justo non orci. Maecenas sollicitudin. Fusce nibh. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Aliquam id dolor. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Sed convallis magna eu sem. Proin mattis lacinia justo. Suspendisse sagittis ultrices augue. Cras elementum.</p>
+        <p>Ut tempus purus at lorem. Aliquam erat volutpat. Aliquam ornare wisi eu metus. Vivamus luctus egestas leo. Phasellus rhoncus. Aliquam erat volutpat. Maecenas sollicitudin. Sed convallis magna eu sem. Nunc auctor. Curabitur sagittis hendrerit ante. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+      </div>
+    </div>
+    <div id="newspost" style="display: none;padding-top:1%">
+    </div>
+    <div id="history" style="display: none;">
+      <h2>Latest played songs:</h2>
+      <div id="his"><i>Fetching data</i></div>
+    </div>
+    <div id="livestream" style="display: none;">
+      <h1>Live Podcast</h1>
+      <div id="errorlive" style="display:none">
+        <p>Live Podcast is currently offline</p>
+        <p>If the Podcast should be live and you see this message, try refreshing the page.</p>
+      </div>
+      <video controls class="video-js vjs-fluid vjs-big-play-centered" id="lsHLS">
+        <source src="http://foxxy.ml:8888/mystream/stream.m3u8" type="application/x-mpegURL">
+      </video>
+    </div>
+  </main>
+  <button type="button" class="btn btn-floating btn-lg" id="scrollup">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.js"></script>
+<script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
+<script src="main.js"></script>
+
+</html>

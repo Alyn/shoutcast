@@ -1,0 +1,264 @@
+/* --Main page stuff-- */
+body {
+  color:white;
+  background-image: url("content/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family:Open Sans;
+  text-align:center;
+}
+
+main {
+  padding: 0 0 1% !important;
+  background-color:#292A2D;
+  z-index:0;
+}
+
+main h1 {
+  padding-bottom: 1.5%;
+}
+
+/* --Header & navbar-- */
+header {
+  background-color:#282C34;
+  padding-top:1.5%;
+  top: 0;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index:2;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  width: 120px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: large;
+  margin:0;
+}
+
+.nav {
+  margin-top:1%;
+  background-color:#21252B;
+}
+
+.margin5 {
+  padding-top:5%;
+}
+
+/* --Custom cliclable style-- */
+.Clickable {
+    cursor: pointer;
+}
+
+.Clickable:hover {
+    color: #656577 !important;
+}
+
+/* --No padding-- */
+.nopad {
+  padding: 0 !important;
+}
+
+/* --Player-- */
+#player1 img {
+  border-radius: 10%;
+}
+
+.player1 {
+  margin-right: auto;
+}
+
+#defaultimg {
+  width:160px;
+}
+
+.overlayimg {
+  width:80px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.radioname {
+  font-size:300%;
+  margin: 0 !important;
+  font-weight: bold;
+}
+
+.player2 img {
+  margin-right: 2%;
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+#slider .slider-track-high {
+	background: #21252B;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  animation: rotating 2s linear infinite;
+}
+
+/* --Status div-- */
+#statusdiv p, #status {
+  margin-bottom: 2% !important;
+}
+
+/* --History--*/
+.leftCol {
+  text-align:right;
+}
+.time {
+  text-align:center;
+  font-weight:bold;
+}
+.ladder {
+	background-image:url(content/ladder.png);
+	background-size:100% 100%;
+	height:54px;
+	width:40px;
+}
+.ladderEnd {
+	background-image:url(content/end.png);
+	background-size:100% 100%;
+	height:27px;
+	width:40px;
+}
+.eDown {
+	transform:scaleY(-1);
+}
+.lRight {
+	transform:scaleX(-1);
+}
+
+/* --Main pages content-- */
+.mainpagecontent {
+  padding-right:25px;
+  padding-left:25px;
+  margin-top:2%;
+  font-family:Verdana;
+}
+
+main video {
+  width:100%;
+}
+
+#home video {
+  box-shadow: 0 10px 10px -10px black;
+}
+
+main h1, main h2 {
+  padding-top: 1%;
+}
+
+hr {
+  border-color:white;
+}
+
+/* --News section-- */
+.newssection {
+  margin: 4% 2% 2% 2%;
+}
+
+.post {
+  text-align: left;
+  border-radius: 10px;
+  border: 1.2px solid black;
+  background-color: #21252B;
+  margin: 3% 1% 0 1%;
+  padding: 10px 0 20px;
+  font-family:Open Sans;
+  box-shadow: 0 0 10px black;
+}
+
+#newspost .post {
+  margin-top: 1% !important;
+  padding: 1% 3% 3% 3%;
+}
+
+.postHead {
+  margin: 0 0 30px 20px;
+}
+
+.postHead a {
+  font-size:230%;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.postHead a:hover {
+  text-shadow: 0 0 5px white;
+}
+
+.pinnedPost {
+  text-align: center;
+  margin-left: 0 !important;
+}
+
+.postDate {
+  font-size: 85%;
+}
+
+.postPreview {
+  padding-left: 3%;
+  padding-right: 2%;
+}
+
+.post i {
+  font-size: 85%;
+  color:gray;
+}
+
+.postblock h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.morebutton {
+  background-color:#21252B;
+  color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-variant: small-caps;
+  font-size: 130%;
+  font-weight: bold;
+  font-family: Open Sans;
+  margin-top: 2%;
+  /*box-shadow: 0 0 5px black;*/
+}
+
+.morebutton:hover {
+  background-color:#292A2D
+}
+
+/* --BackUP-- */
+#scrollup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color:#282C34;
+  color:white;
+  border: 1.2px solid black;
+  box-shadow: 0 0 8px black;
+}

@@ -1,0 +1,83 @@
+function getHistory() {
+  var y = new XMLHttpRequest();
+  y.open("GET", "/played.html", true);
+  y.onreadystatechange = function () {
+    if (y.readyState == 4 && y.status == 200)
+    {
+      var html = "<table>" + y.response.split("<b>Song Title</b></td></tr>").pop().split('<script type="text/javascript">')[0].replace('<td style="padding: 0 1em;"><b>Current Song</b></td>', '');
+      html = new DOMParser().parseFromString(html, "text/html");
+
+      var cells = html.querySelectorAll("td");
+      document.getElementById("his").innerHTML = "";
+      var outputTable = "<table style='margin-left: auto;margin-right: auto;'><thead><tr><th style='text-align:right'>Song title</th><th style='min-width:100px;text-align:center'>Time</th><th>Song title</th></tr></thead><tbody>";
+      var alternate = 0;
+      for (var i = 0; i < cells.length; i+=2) {
+        var time = cells[i].firstChild.data;
+        var song = cells[i+1].firstChild.data;
+        if(alternate % 2 === 0) {
+          outputTable += "<tr><td></td><td class='time'>"+time+"</td><td class='rightCol'>"+song+"</td></tr>";
+        } else {
+          outputTable += "<tr><td class='leftCol'>"+song+"</td><td class='time'>"+time+"</td><td></td></tr>";
+        }
+        alternate++;
+      }
+      document.getElementById("his").innerHTML = outputTable + "</tbody></table>";
+    }
+  };
+  y.send(null);
+}
+
+function getCurNex() {
+  var x = new XMLHttpRequest();
+  x.open("GET", "/currentmetadata?sid=1", true);
+  x.onreadystatechange = function () {
+    if (x.readyState == 4 && x.status == 200)
+    {
+      var xmlDoc = x.responseXML;
+      var check = xmlDoc.getElementsByTagName("SONGMETADATA")[0].childNodes[0];
+      if(check) {
+        document.getElementById("cur").innerHTML = xmlDoc.getElementsByTagName("TIT2")[0].childNodes[0].nodeValue;
+        document.getElementById("nex").innerHTML = xmlDoc.getElementsByTagName("soon")[0].childNodes[0].nodeValue;
+        if(xmlDoc.getElementsByTagName("TIT2")[0].childNodes[0].nodeValue != curSong) {
+          getHistory();
+        }
+        curSong = xmlDoc.getElementsByTagName("TIT2")[0].childNodes[0].nodeValue;
+      } else {
+        document.getElementById("cur").innerHTML = "No data available";
+        document.getElementById("nex").innerHTML = "No data available";
+        document.getElementById("his").innerHTML = "No data available";
+      }
+    } else if (x.status == 503) {
+      document.getElementById("cur").innerHTML = "Error 503 - Shoutcast server is probably down";
+      document.getElementById("nex").innerHTML = "Error 503 - Shoutcast server is probably down";
+      document.getElementById("his").innerHTML = "Error 503 - Shoutcast server is probably down";
+    }
+  };
+  x.send(null);
+}
+
+//tady je staré ovládání nav baru
+$('.nav-link').click(function() { //#history atd taky??
+  if(window.location.hash)
+    history.replaceState(null, null, "/");
+
+  var $target = $($(this).attr('href'));
+  var $other = $target.siblings('.active');
+
+  if (!$target.hasClass('active')) {
+    if($target[0].id == "livestream" && streamOpened == false) {
+      createStream();
+      streamOpened = true;
+    }
+
+    $other.each(function(index, self) {
+      var $this = $(this);
+      $this.removeClass('active').fadeOut({}, 500);
+    });
+
+    setTimeout(function() {
+      $target.addClass('active').fadeIn({}, 500);
+      adjustThings();
+    }, 600);
+  }
+});
