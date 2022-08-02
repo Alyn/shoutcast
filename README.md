@@ -1,4 +1,4 @@
-# ShoutCast Web
+# ShoutCast Web © Made By Alyn Esential © 2022
 
 - Website for shoutcast online radio with history I made when I got bored.
 - Wanted to do a PHP for adding articles but lost motivation.
@@ -21,5 +21,4 @@
 - For some more info visit the text file named "pinned.txt" in the articles folder.
 - Also this website will play the stream when switching to another pages because it's loaded with JS and back/forwards buttons work too with it :)
 - I allow people to use parts of my code, also this entire site with changes to my artwork.
-- Screenshots: [Imgur](https://imgur.com/a/VrV9AFj)
-
+- Some screenshots: [Imgur](https://imgur.com/a/VrV9AFj)
