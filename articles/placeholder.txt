@@ -1,0 +1,9 @@
+<div class="post">
+  <div class="postblock">
+
+    <h1>Place holder</h1>
+
+    <p>Placeholder text</p>
+
+  </div>
+</div>

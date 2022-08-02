@@ -1,0 +1,16 @@
+<div class="post">
+  <div class="postblock">
+
+    <h1>About us</h1>
+
+    <p>I actually don't know what to write here, because I don't even believe this website would be used...</p>
+    <p>Like ngl, it would be epic and it would make me happy and excited if I actually had some team, that would make playlists for this radio and that it would actually operate like a real one. One that you could just listen to, I would even host it all for free and maybe make a Android app...</p>
+    <p>A radio with... You know... With all of the different styled playlists made by some 'DJs' in the team, quickly say between songs or when changing playlists. And also like the one page in the menu says, having a podcast with some people in the team and talk about stuff... That would be cool!</p>
+    <p>Creating this site started about when I wanted to transmit some songs on the FM frequency with like 100W of power, that would be +-20km radius in what you could tunein with your cars stereo, but that's.. ugh.. kinda illegal without license.</p>
+    <p>So that's why I created this website, being a online radio, that will be most likely never used... Maybe one day :)</p>
+    <p>I will be most likely putting this site/page, how you wanna call it, on GitHub for others to get information from or use. If you happen to use this site, <b>do NOT use any of the video or photo in the 'content' folder</b>, it's mine. (if I don't exchange it for placeholders). Also I think the most of the images in the 'icons' folder are under copyright so you might wanna change them too.</p>
+    <hr><br>
+    <p>This page is created using Bootstrap, plain CSS, JS, JQuery, Video.js. Then Apache or nginx for hosting the site and proxing the ShoutCast or IceCast (would need a rewrite of fetch functions). And for the livestream server, I used <a href="https://github.com/aler9/rtsp-simple-server">rtsp-simple-server</a>, but it would be probably better to use something like YT.</p>
+
+  </div>
+</div>
